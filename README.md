@@ -6,6 +6,7 @@ A LangGraph agent that monitors Telegram channels, uses a local LLM to detect ne
 
 ## Agent Graph
 
+```
           START
             │
             ▼
