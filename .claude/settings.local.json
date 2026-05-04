@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m venv .venv)",
+      "Bash(curl -s --max-time 5 \"https://api.telegram.org\")"
+    ]
+  }
+}
