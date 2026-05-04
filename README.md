@@ -1,6 +1,6 @@
 # news-filterer
 
-A LangGraph agent that monitors Telegram channels, uses a local LLM to detect news (such as military strike reports), and sends structured digests straight to your Telegram.
+A LangGraph agent that monitors Telegram channels, uses a local LLM to detect news (such as strike reports), and sends structured digests straight to your Telegram.
 
 ---
 
@@ -20,40 +20,36 @@ A LangGraph agent that monitors Telegram channels, uses a local LLM to detect ne
             │
        ┌────┴─────┐
        │          │
-
-strikes? none
-│ │
-▼ ▼
-┌─────────┐ END
-│ sender │ formats Arabic digest → Telegram
-└────┬────┘
-│
-END
+  strikes?      none
+       │          │
+       ▼          ▼
+  ┌─────────┐   END
+  │ sender  │  formats Arabic digest → Telegram
+  └────┬────┘
+       │
+      END
+```
 
 ---
 
 ## Setup
 
 **1. Install**
-
 ```bash
 pip install -r requirements.txt
 ```
 
 **2. Configure** — fill in `config.py`:
-
 - Telegram API credentials & bot token
 - Channel list, lookback window, run interval
 - LM Studio model name & endpoint
 
-**3. Auth** _(once)_
-
+**3. Auth** *(once)*
 ```bash
 python graph.py auth
 ```
 
 **4. Get your chat ID** — send `/start` to your bot, then:
-
 ```bash
 python graph.py chat-id
 ```
